@@ -1,0 +1,21 @@
+/* Navigation Bar */
+
+.NavBar{
+    display: flex;
+    justify-Content: space-between;
+    align-Items: center;
+    padding: 12px 24px;
+    background-Color: #9CAF88;
+    color: #fff;
+}
+
+.NavLinks {
+  display: flex;
+  gap: 16px;
+}
+
+.NavLinks a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -1,0 +1,370 @@
+/* src/pages/SellerDashboard.css */
+
+.seller-dashboard {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.seller-dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.seller-dashboard-header h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.seller-dashboard-header p {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.seller-dashboard-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+
+.btn-primary,
+.btn-outline,
+.btn-small,
+.btn-danger {
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.btn-primary {
+  background: #051f59;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #3d59a7;
+}
+
+.btn-outline {
+  background: #fff;
+  color: #05215e;
+  border: 1px solid #021745;
+}
+
+.btn-outline:hover {
+  background: #eff6ff;
+}
+
+.btn-small {
+  padding: 4px 8px;
+  font-size: 12px;
+  background: #e5e7eb;
+  color: #111827;
+  margin-right: 6px;
+}
+
+.btn-small:hover {
+  background: #d1d5db;
+}
+
+.btn-danger {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.btn-danger:hover {
+  background: #fecaca;
+}
+
+.seller-dashboard-loading,
+.seller-dashboard-error {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.seller-dashboard-loading {
+  background: #eff6ff;
+  color: #081d56;
+}
+
+.seller-dashboard-error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Top stats */
+
+.seller-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .seller-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .seller-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.seller-stat-card {
+  padding: 16px;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.seller-stat-label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.seller-stat-value {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.seller-stat-subtitle {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Layout */
+
+.seller-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(280px, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .seller-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.seller-section {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seller-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.seller-section-header h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.seller-small-muted {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.seller-empty-state {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Tables */
+
+.seller-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.seller-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.seller-table thead {
+  background: #f9fafb;
+}
+
+.seller-table th,
+.seller-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.seller-table th {
+  font-weight: 500;
+  color: #6b7280;
+}
+
+/* Status badges */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.inventory-low-stock {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Lists */
+
+.seller-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.seller-notifications-list,
+.seller-payouts-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.seller-notification-item {
+  display: flex;
+  gap: 8px;
+}
+
+.seller-notification-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: #03236a;
+  margin-top: 6px;
+}
+
+.seller-notification-message {
+  margin: 0;
+  font-size: 13px;
+}
+
+.seller-notification-time {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.seller-payout-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seller-payout-amount {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.seller-payout-date {
+  font-size: 11px;
+  color: #6b7280;
+}
+
+/* Form */
+
+.seller-form-wrapper {
+  margin-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 12px;
+}
+
+.seller-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.seller-form-grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  gap: 4px;
+}
+
+.seller-form-grid input,
+.seller-form-grid textarea,
+.seller-form-grid select {
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+.seller-form-grid input:focus,
+.seller-form-grid textarea:focus,
+.seller-form-grid select:focus {
+  outline: none;
+  border-color: #052059;
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.2);
+}
+
+.seller-form-full {
+  grid-column: 1 / -1;
+}
+
+.seller-form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+  justify-content: flex-end;
+}
+/* Blue banner at top of seller dashboard */
+.seller-dashboard-banner {
+  width: 100%;
+  background: #06257d; /* dark blue */
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.seller-dashboard-banner h1 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* optional small subtitle under banner */
+.seller-dashboard-subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #4b5563;
+}

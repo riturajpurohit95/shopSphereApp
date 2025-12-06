@@ -1,0 +1,238 @@
+:root {
+  --bg-page: #f4f5fb;
+  --bg-main: #ffffff;
+  --bg-card: #ffffff;
+  --blue: #2563eb;
+  --blue-soft: #60a5fa;
+  --violet: #7c3aed;
+  --text-main: #0f172a;
+  --text-soft: #6b7280;
+  --border-soft: rgba(148, 163, 184, 0.45);
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.12);
+}
+
+/* ------------------- BACKGROUND --------------------- */
+
+/* Full screen gradient + swirling glow */
+.profile-page-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* base gradient (very soft) */
+  background: white;
+
+  overflow: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* glowing swirl — your exact colors */
+.profile-page-wrapper::before {
+  content: "";
+  position: absolute;
+  right: -140px;
+  top: -140px;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background-color:white;
+   
+  opacity: 0.28;
+  filter: blur(6px);
+  pointer-events: none;
+  animation: slowSpin 26s linear infinite;
+}
+
+/* rotation animation */
+@keyframes slowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ------------------- PROFILE CARD --------------------- */
+
+.profile-card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 620px;
+  padding: 28px 32px 24px;
+  background: var(--bg-card);
+  border-radius: 26px;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--border-soft);
+  backdrop-filter: blur(12px);
+}
+
+/* Titles */
+.profile-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-main);
+  margin-bottom: 4px;
+}
+
+.profile-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+  margin-bottom: 20px;
+}
+
+/* Info Messages */
+.profile-info,
+.profile-error,
+.profile-message {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.profile-info {
+  color: var(--text-soft);
+}
+
+.profile-error {
+  color: #b91c1c;
+}
+
+.profile-message {
+  color: #047857;
+}
+
+/* ------------------- FORM ---------------------------- */
+
+.profile-form {
+  margin-top: 6px;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px 18px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-field-full {
+  grid-column: 1 / -1;
+}
+
+.profile-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-soft);
+}
+
+/* Inputs */
+.profile-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  background: #f9fafb;
+  font-size: 0.95rem;
+  color: var(--text-main);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease,
+    transform 0.05s ease;
+}
+
+.profile-input:focus {
+  border-color: var(--blue-soft);
+  box-shadow: 0 0 0 1px white;
+  background: #ffffff;
+}
+
+.profile-input-readonly {
+  background: #f3f4f6;
+  color: var(--text-soft);
+  cursor: not-allowed;
+}
+
+/* ------------------- BUTTONS -------------------------- */
+
+.profile-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.btn-primary,
+.btn-secondary {
+  border: none;
+  border-radius: 999px;
+  padding: 10px 18px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.12s ease, background 0.12s ease,
+    opacity 0.12s ease;
+  white-space: nowrap;
+}
+
+.btn-secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.btn-secondary:hover {
+  background: #d1d5db;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.55);
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.55);
+}
+
+.btn-primary:disabled {
+  opacity: 0.7;
+  cursor: wait;
+  box-shadow: none;
+}
+
+/* ------------------- RESPONSIVE ------------------------ */
+
+@media (max-width: 640px) {
+  .profile-card {
+    padding: 22px 18px 18px;
+    border-radius: 20px;
+  }
+
+  .profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

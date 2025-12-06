@@ -1,0 +1,208 @@
+/* Login Container */
+.Div1 {
+  max-width: 420px;
+  margin: 2rem auto;
+  background-color: #9CAF88; /* Soft sage green */
+  border-radius: 12px;
+  padding: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Form */
+
+.LoginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Center horizontally */
+  justify-content: center;   /* Center vertically if needed */
+  gap: 16px;                 /* Space between elements */
+  width: 100%;
+}
+
+.h1_label{
+  all: revert;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* Center horizontally */
+  justify-content: center;   /* Center vertically if needed */
+  gap: 16px;                 /* Space between elements */
+  width: 100%;
+}
+
+/* Inputs */
+.input1 {
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Error Message */
+.error1 {
+  color: #fff;
+  background-color: #b00020;
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Submit Button */
+
+
+.submit1 {
+  width: 150px;
+  height: 45px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #3b82f6; /* Bright blue base */
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.08s ease;
+}
+
+.submit1:hover {
+  background-color: #8b5cf6; /* Violet on hover */
+  color: #fff;               /* Keep text white for contrast */
+  box-shadow: 0 8px 24px rgba(139, 92, 246, 0.35); /* Violet-tinted shadow */
+  transform: translateY(-1px); /* slight lift for polish */
+}
+
+
+/* Optional: subtle press feedback */
+.submit1:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 18px rgba(139, 92, 246, 0.28);
+}
+
+/* Optional: accessible focus ring */
+.submit1:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.35); /* blue focus ring */
+}
+
+
+
+
+/* Split container: two equal columns */
+.LoginSplit {
+  display: grid;
+  grid-template-columns: 1fr 1fr;          /* 50/50 split */
+  min-height: 100vh;                       /* Full viewport height */
+}
+
+/* Stack on small screens */
+@media (max-width: 900px) {
+  .LoginSplit {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left side: center the form */
+.LoginLeft {
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #fff !important;                         /* Optional: solid bg to ensure contrast */
+}
+
+/* Form card */
+.LoginCard {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 28px;
+  
+box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.20),       /* near shadow */
+    0 12px 36px rgba(15, 23, 42, 0.24);     /* far, soft shadow */
+
+  position: relative;
+}
+
+/* Right side: holds the background block */
+.LoginRight {
+  position: relative;
+  overflow: hidden;                         /* Prevent any bleed */
+}
+
+/* Full-cover background image constrained to the right half only */
+.LoginHeroBg {
+  position: absolute;
+  inset: 0;                                 /* top/right/bottom/left: 0 */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;                   /* Cover the right half neatly */
+}
+
+/* Optional: subtle overlay for contrast with the form */
+.LoginHeroBg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.08);             /* tweak opacity as needed */
+}
+
+
+
+.Toast {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;                 /* sits near bottom of the card */
+  transform: translateX(-50%) translateY(8px);
+  padding: 10px 14px;
+  
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 8px 28px rgba(16, 24, 40, 0.12);
+  opacity: 0;
+  pointer-events: none;
+  animation: toastIn 200ms ease-out forwards, toastOut 300ms ease-in 2700ms forwards;
+  z-index: 2;                   /* above card content */
+}
+
+/* Error variant */
+.Toast--error {
+  background: linear-gradient(180deg, #ef4444, #dc2626); /* red tones */
+}
+
+/* Success variant (if you need later) */
+/* .Toast--success { background: linear-gradient(180deg, #22c55e, #16a34a); } */
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(-50%) translateY(8px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateX(-50%) translateY(0); }
+  to   { opacity: 0; transform: translateX(-50%) translateY(8px); }
+}
+
+
+.SignUpLink {
+  color: #3b82f6;            /* Blue link */
+  text-decoration: none;     /* No underline by default */
+  font-weight: 700;
+}
+
+.SignUpLink:hover {
+  text-decoration: underline; /* Underline on hover for clarity */
+  color: #2563eb;             /* Slightly darker blue on hover */
+}
+
+
+/* Ensure the card can position the toast absolutely */
+
